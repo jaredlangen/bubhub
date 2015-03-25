@@ -70,5 +70,10 @@
   =check_box_tag :terms, :style => "float:left;"
   =label :terms, 'I Accept'
 
+  =form_for :test, url: tests_path do |f|
+    %p
+      = f.simple_captcha :label=>"Enter the code: ", :object => "test"
+      = f.submit
+
   %div
   =submit_tag "Register", :controller => "user", :action => "create", :method => "put"
