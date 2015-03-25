@@ -68,9 +68,22 @@
     Article 1. Cyclist shall acknowledge that bicycling can be a hazardous activity that involves risks that may be injurious or fatal. Cyclist agrees to defend, indemnify and hold harmless Binghamton University, and its subsidiaries and related entities, as well as their respective trustees, officers, directors, employees, and students, together with their successors and assigns, from and against any and all claims, suits, liabilities, costs and injury, loss, and damage arising out of cyclist's use of equipment or participation in the program, and;
     %br
     Article 2. Cyclist hereby acknowledges and agrees that Binghamton University is not responsible for the condition of the equipment; therefore, cyclist’s acceptance of the equipment on an “as is” basis. Binghamton University hereby disclaims any and all expressed and implied warranties, including without limitation those of fitness for intended use, and Binghamton University shall not be liable for consequential, incidental or indirect damages caused by the equipment of cyclist’s use thereof.
+<<<<<<< HEAD
   
     %div 
     =check_box_tag :terms, :style => "float:left;"
     =label :terms, 'I Accept'
     %div
     =submit_tag "Register", :controller => "user", :action => "create", :method => "put",:class => "register"
+=======
+  =check_box_tag :terms, :style => "float:left;"
+  =label :terms, 'I Accept'
+
+  =form_for :test, url: tests_path do |f|
+    %p
+      = f.simple_captcha :label=>"Enter the code: ", :object => "test"
+      = f.submit
+
+  %div
+  =submit_tag "Register", :controller => "user", :action => "create", :method => "put"
+>>>>>>> b9d9186773408f14b6f6fb9e1be70bc494f7e806
