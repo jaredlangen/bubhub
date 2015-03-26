@@ -5,10 +5,10 @@ Feature: Index
 
 Scenario: Sign-In Button
   Given I am on /index
-  And I click on "Sign-In"
-  Then I should be on /login
+  And I follow "Sign-In"
+  Then I should be on /sign_in
 
 Scenario: Register Button
   Given I am on /index
-  And I click on "Register"
-  Then I should be on /register  
+  And I follow "Register"
+  Then I should be on /register

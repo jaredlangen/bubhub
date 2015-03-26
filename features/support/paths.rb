@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /^the movies page$/ then '/movies'
-
+    when /^the Sign-In page$/ then sign_in_page
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
