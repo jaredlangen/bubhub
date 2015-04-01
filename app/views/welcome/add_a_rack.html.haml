@@ -1,0 +1,15 @@
+= render 'navbar'
+%h1 Add a Rack
+%FORM{:ACTION => rack_submit_page_path, :METHOD => rack_submit_page_path}
+  %P
+    Rack Location:
+    %input{:location => "name", :size => "48"}
+      %P
+        Amount of Bikes at Rack
+        %input{:bike_num => "bike_num", :size => "3"}
+          %P
+            Extra notes about this rack:
+            %textarea{:cols => "48", :notes => "notes", :rows => "4"}
+            %P
+              %INPUT{:TYPE => "SUBMIT"}
+                %INPUT{:TYPE => "RESET"}
