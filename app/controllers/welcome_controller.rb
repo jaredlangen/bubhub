@@ -2,12 +2,18 @@ class WelcomeController < ApplicationController
 	def index
     @hilite = "index"
 		render
-	end
+	  flash[:notice]
+  end
 
 	def join
     @hilite = "join"
 		render
 	end
+    
+    def landing
+      @title = "Bike Share Landing"
+      @hilite = "landing"
+    end
 
 	def resources
     @hilite = "resources"

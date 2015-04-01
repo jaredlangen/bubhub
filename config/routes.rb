@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => 'welcome#index'
+  root :to => 'welcome#index', as: :root_page
 
   get '/index', to: 'welcome#index', as: :index_page
   get "/join", to: "welcome#join", as: :join_page
@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   get '/how_it_works', to: "welcome#how_it_works", as: :how_it_works_page
   get '/add_a_rack', to: "welcome#add_a_rack", as: :add_a_rack_page
   get '/rack_submit', to: "welcome#rack_submit", as: :rack_submit_page
+  get '/register', to: "user#register", as: :register_page
+  post '/register', to: "user#create", as: :new_user_page  
+  get '/manage_users', to: "accounts#manage_users", as: :manage_users_page
+  get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
+  put '/update_user/:id', to: "accounts#update", as: :update_user
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
