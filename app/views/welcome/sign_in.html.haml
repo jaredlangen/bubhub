@@ -7,7 +7,7 @@
 =form_tag invalid_user_page_path(@user), :method=>:get do
   .div1
     %div
-    = label :user, :first_name, 'User Name'
+    = label :user, :login_name, 'User Name'
     .user-field
     = text_field :user, 'first_name'
   

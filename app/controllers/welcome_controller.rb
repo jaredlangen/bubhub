@@ -46,11 +46,10 @@ class WelcomeController < ApplicationController
 
   def invalid_user
     @user_list = User.all
-    @c_user = params[:user]
+    first_name = params[:user][:first_name]
     params.permit!
     @user_list.each do |u|
-      puts u.first_name
-      if u.first_name != "" and u.first_name == @c_user[0]
+      if first_name == u[:first_name]
         redirect_to valid_user_page_path
         return
       end
