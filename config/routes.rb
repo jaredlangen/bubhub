@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => 'welcome#index', as: :root_page
 
+
   get '/index', to: 'welcome#index', as: :index_page
   get "/join", to: "welcome#join", as: :join_page
   get "/contact_us", to: "welcome#contact_us", as: :contact_us_page  
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   get '/register', to: "user#register", as: :register_page
   get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
   get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
+  get '/valid_user', to: "welcome#valid_user", as: :valid_user_page
 	post '/', to: "user#create", as: :new_user_page  
 	# Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -43,4 +43,23 @@ class WelcomeController < ApplicationController
     @hilite = "how_it_works"
     render
   end
+
+  def invalid_user
+    @user_list = User.all
+    @c_user = params[:user]
+    params.permit!
+    @user_list.each do |u|
+      puts u.first_name
+      if u.first_name != "" and u.first_name == @c_user[0]
+        redirect_to valid_user_page_path
+        return
+      end
+    end
+  end
+
 end
+
+
+
+
+
