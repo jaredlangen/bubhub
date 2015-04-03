@@ -1,9 +1,9 @@
 class UserController < ApplicationController
   def create
-    if not (params[:user][:firstName].present? and params[:user][:lastName].present? and
-      params[:user][:bMail].present? and params[:user][:BNumber].present? and
-      params[:user][:pin].present? and params[:user][:phoneNumber].present? and
-      params[:user][:BUCardNumber].present?)
+    if not (params[:user][:first_name].present? and params[:user][:last_name].present? and
+      params[:user][:b_mail].present? and params[:user][:b_number].present? and
+      params[:user][:pin].present? and params[:user][:phone_number].present? and
+      params[:user][:bu_card_number].present?)
         flash[:error]= "Please fill in all required fields."
         redirect_to register_page_path and return
     else
