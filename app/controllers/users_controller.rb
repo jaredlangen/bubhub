@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
   def create
-=begin
-    if not (params[:user][:first_name].present? and params[:user][:last_name].present? and
-      params[:user][:email].present? and params[:user][:bu_id].present? and
-      params[:user][:pin].present?)
-        flash[:error]= "Please fill in all required fields."
-        redirect_to new_user_path and return
-    else
-=end
     @user = User.new
     @user.first_name = params[:user][:first_name]
     @user.last_name = params[:user][:last_name]
@@ -23,11 +15,6 @@ class UsersController < ApplicationController
       flash[:error]= "Please fill in all required fields."
       redirect_to new_user_path and return
     end
-   # end
-
-
-       
-   
   end
 
   def new
