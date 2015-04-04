@@ -21,24 +21,16 @@ All fields are required. Please make sure to complete all fields.
       = text_field :user, :last_name
 
     %br
-      = label :user, :b_mail, 'BMail Address'
-      = email_field :user, :b_mail
+      = label :user, :email, 'BMail Address'
+      = email_field :user, :email
 
     %br
-      = label :user, :b_number, 'B-Number'
-      = text_field :user, :b_number
+      = label :user, :bu_id, 'BU ID-Number'
+      = text_field :user, :bu_id
 
     %br
       = label :user, :pin, 'Pin Number'
       = text_field :user, :pin
-
-    %br
-      = label :user, :phone_number, 'Phone Number'
-      = telephone_field :user, :phone_number
-
-    %br
-      = label :user, :bu_card_number, 'BU ID Card Number'
-      = text_field :user, :bu_card_number
 
   %p
     %h3 BU Bikeshare Terms and Conditions
