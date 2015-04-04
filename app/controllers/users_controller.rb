@@ -1,24 +1,29 @@
 class UsersController < ApplicationController
   def create
+=begin
     if not (params[:user][:first_name].present? and params[:user][:last_name].present? and
       params[:user][:email].present? and params[:user][:bu_id].present? and
       params[:user][:pin].present?)
         flash[:error]= "Please fill in all required fields."
         redirect_to new_user_path and return
     else
-      @user = User.new
-      @user.first_name = params[:user][:first_name]
-      @user.last_name = params[:user][:last_name]
-      @user.bu_id = params[:user][:bu_id]
-      @user.email = params[:user][:email]
-      @user.pin = params[:user][:pin]
+=end
+    @user = User.new
+    @user.first_name = params[:user][:first_name]
+    @user.last_name = params[:user][:last_name]
+    @user.bu_id = params[:user][:bu_id]
+    @user.email = params[:user][:email]
+    @user.pin = params[:user][:pin]
 
-      @user.save
-
+    if @user.save
       @createdUser = User.find_by(bu_id: @user.bu_id)
       flash[:notice] = " An account for #{@createdUser.first_name} #{@createdUser.last_name} was successfully created"
       redirect_to root_page_path and return
+    else
+      flash[:error]= "Please fill in all required fields."
+      redirect_to new_user_path and return
     end
+   # end
 
 
        
