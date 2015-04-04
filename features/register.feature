@@ -3,7 +3,7 @@ Feature: As a user
          I want a registration page
 
 Background:
-    Given I am on /register
+    Given I am on /users/new
 
 Scenario: Display user account registration fields
     Then I should see "Register with Bikeshare"
@@ -11,10 +11,8 @@ Scenario: Display user account registration fields
     Then I should see "First Name"
     Then I should see "Last Name"
     Then I should see "BMail Address"
-    Then I should see "B-Number"
+    Then I should see "BU ID-Number"
     Then I should see "Pin Number"
-    Then I should see "Phone Number"
-    Then I should see "BU ID Card Number"
     Then I should see "BU Bikeshare Terms and Conditions"
     Then I should see "Section I. Rules"
     Then I should see "Article 1. Cyclist shall abide by the following rules:"

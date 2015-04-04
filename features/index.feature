@@ -11,4 +11,4 @@ Scenario: Sign-In Button
 Scenario: Register Button
   Given I am on /index
   And I follow "Register"
-  Then I should be on /register  
+  Then I should be on /users/new 
