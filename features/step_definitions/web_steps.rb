@@ -108,3 +108,8 @@ end
 Then /^I should see the "(.+)" button$/ do |button|
   should have_button button
 end
+
+
+Then /^I should not see the "(.+)" button$/ do |button|
+  should_not have_button button
+end
