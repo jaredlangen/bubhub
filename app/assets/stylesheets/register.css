@@ -15,6 +15,6 @@ body{
   visibility: hidden;
 }
 
-#terms:checked ~ .register{
+#I_Accept:checked ~ .register{
   visibility: visible;
 }
