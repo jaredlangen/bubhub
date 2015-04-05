@@ -100,3 +100,7 @@ Then /^I should see the image "(.+)"$/ do |image|
         assert page.has_selector?("img[src$='#{image}']") 
     end
 end
+
+Then /^the checkbox "(.+)" should be unchecked$/ do |checkbox|
+  find_field(checkbox)[:value].should eq "false"
+end
