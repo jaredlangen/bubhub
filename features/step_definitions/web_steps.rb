@@ -104,3 +104,7 @@ end
 Then /^the checkbox "(.+)" should be unchecked$/ do |checkbox|
   find_field(checkbox)[:value].should eq "false"
 end
+
+Then /^I should see the "(.+)" button$/ do |button|
+  should have_button button
+end
