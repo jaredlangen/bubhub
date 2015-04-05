@@ -22,3 +22,11 @@ Scenario: User fills in registration form and accepts terms and conditions
   When I press "Register"
   Then I should be on root page
   Then I should see "An account for Kyle Goodwill was successfully created"
+
+Scenario: User only fills in some fields in form and accepts terms and conditions
+  When I fill out the form with:
+    | user_first_name | Kyle     |
+    | user_last_name  | Goodwill |
+  When I check "I Accept"
+  When I press "Register"
+  Then I should see "All fields are required. Please make sure to complete all fields."
