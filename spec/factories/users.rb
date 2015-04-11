@@ -1,0 +1,1 @@
+#spec/factories/users.rb
