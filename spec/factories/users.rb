@@ -10,4 +10,7 @@ FactoryGirl.define do
     #generate 9 random numbers for a random bu id
     u.bu_id{[1,1,1,1,1,1,1,1,1].map!{|x| (0..9).to_a.sample}.join.to_s}
   end
+  factory :invalid_user, parent: :user do |u|
+    u.first_name{nil}
+  end
 end
