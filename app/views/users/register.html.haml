@@ -3,9 +3,10 @@
 
 %h1 Register with Bikeshare
 
-%div
-  -if flash[:error]
-    =flash[:error]
+.error_message
+  %div
+    -if flash[:error]
+      =flash[:error]
 
 All fields are required. Please make sure to complete all fields.
 
