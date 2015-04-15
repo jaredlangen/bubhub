@@ -1,4 +1,4 @@
-class bike_rack < ActiveRecord::Base
+class BikeRack < ActiveRecord::Base
 
   attr_accessor :location, :num_bikes, :notes
 

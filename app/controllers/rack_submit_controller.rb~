@@ -1,15 +1,11 @@
 class RackController < ApplicationController
   def create
-    if not (params[:user][:firstName].present? and params[:user][:lastName].present? and
-      params[:user][:bMail].present? and params[:user][:BNumber].present? and
-      params[:user][:pin].present? and params[:user][:phoneNumber].present? and
-      params[:user][:BUCardNumber].present?)
+    if not (params[:rack][:location].present? and params[:rack][:num_bikes].present? and
+      params[:rack][:notes].present?)
         flash[:error]= "Please fill in all required fields."
-        redirect_to register_page_path and return
+        redirect_to add_a_rack_page_path and return
     else
-      @user = User.create!(user_params)
-      flash[:notice] = " An account for #{@user.firstName} #{@user.lastName} was successfully created"
-      redirect_to root_page_path and return
+      @rack = Rack.create!(rack_params)
     end
 
 
@@ -26,12 +22,8 @@ class RackController < ApplicationController
   def delete
   end
 
-  def user_params
-    params.require(:user).permit(:firstName, :lastName, :bMail, :BNumber, :pin, :phoneNumber, :BUCardNumber)
-  end
-
-  def register
-    render "register"
+  def rack_params
+    params.require(:rack).permit(:location, :num_bikes, :notes)
   end
 end
 
