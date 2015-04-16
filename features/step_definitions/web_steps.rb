@@ -100,3 +100,23 @@ Then /^I should see the image "(.+)"$/ do |image|
         assert page.has_selector?("img[src$='#{image}']") 
     end
 end
+
+Then /^the checkbox "(.+)" should be unchecked$/ do |checkbox|
+  find_field(checkbox)[:value].should eq "false"
+end
+
+Then /^I should see the "(.+)" button$/ do |button|
+  should have_button button
+end
+
+
+Then /^I should not see the "(.+)" button$/ do |button|
+  should_not have_button button
+end
+
+When /^I fill out the form with:$/ do |table|
+  puts table.rows_hash
+  criteria = table.rows_hash.each do |field, value|
+    fill_in field, :with => value
+  end
+end
