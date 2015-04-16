@@ -12,7 +12,8 @@
   .col-md-6
     %button.btn.btn-success.btn-lg.btn-block Sign-In
     %br
-    =link_to "Add a Rack", add_a_rack_page_path
+    =link_to "Add a Rack", add_a_rack_page_path	
+    =link_to "Check", rack_submit_page_path
     %br
     %button.btn.btn-success.btn-lg.btn-block= link_to "Register", register_page_path
   .col-md-12
