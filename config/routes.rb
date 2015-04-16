@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
   # Example of regular route:
+  get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
+  get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
+	post '/', to: "user#create", as: :new_user_page  
+	# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
