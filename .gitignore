@@ -23,6 +23,8 @@
 # Textmate project files
 /*.tmproj
 
+/log
 
-
-
+# ignore tempfiles from Vim and gedit
+*~
+*.sw?
